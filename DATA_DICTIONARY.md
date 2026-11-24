@@ -11,7 +11,7 @@ One row per separately titled volume. Noble’s two parts have separate work IDs
 | `work_id` | Unique local work identifier. |
 | `year` | Four-digit candidate first-publication year; does not imply inspection of the first issue. |
 | `series_no` | Series number only where explicitly attested; blank when unverified. |
-| `title` | Inventory title; unique in this snapshot and used to link publication and translation records. |
+| `title` | Inventory title; unique in this snapshot. Retained title fields in publication and translation records are checked against this value; joins use `work_id`. |
 | `author` | Author names; multiple names separated by semicolons. |
 | `subject` | Concise descriptive subject terms separated by semicolons. |
 | `source` | Selected bibliographical reference URL. |
@@ -24,7 +24,8 @@ One row per provisional edition, impression or issue grouping. These rows are no
 | Column | Meaning |
 | --- | --- |
 | `edition_id` | Unique local publication-record identifier. Suffixes such as `US`, `imp…`, `unspecified` or `reissue` preserve provisional distinctions. |
-| `title` | Exact match to `works.title`. |
+| `work_id` | Required foreign key to `works.work_id`; identifies the work associated with this publication grouping. Repeats across publication records for the same work. |
+| `title` | Retained inventory title; matches `works.title` for the linked `work_id`. |
 | `year` | Four-digit year assigned to the publication grouping; can differ from the impression year. Includes later reissues. |
 | `impression` | Four-digit printing year where separately recorded; 14 populated cells. A blank does not establish that a record is a new edition. |
 | `designation` | Selected edition or printing wording, including brackets and qualifications; blank if unstated or unresolved. |
@@ -54,7 +55,8 @@ One row per translation record or lead, including distinct issues and undated at
 | Column | Meaning |
 | --- | --- |
 | `translation_id` | Unique local record identifier; source-based suffixes are not a verification guarantee. |
-| `original_title` | Exact match to `works.title`. |
+| `work_id` | Required foreign key to `works.work_id`; identifies the original work associated with this translation record or lead. Repeats across translations of the same work. |
+| `original_title` | Retained original inventory title; matches `works.title` for the linked `work_id`. |
 | `translated_title` | Recorded translated title, retaining source spelling. |
 | `language` | Language of the translation or lead. |
 | `date` | Free-text date or uncertainty, including brackets, `c`, `s. f.` (undated) and announcement bounds. Do not parse all values as publication years. |

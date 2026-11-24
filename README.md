@@ -4,7 +4,7 @@ A working bibliographical inventory of the University Mathematical Texts (UMT), 
 
 **This is a working inventory, not an exhaustive or definitive bibliography.** The dates 1939–1972 describe the currently identified first-publication roster. Selected later reissues are also recorded.
 
-Current release: **24 November 2026** (initial repository snapshot). Access and verification statements reflect the underlying compilation, documented by 8 November 2026; they have not been systematically rechecked for this release.
+Current release: **24 November 2026** (minor revision: corrected 1944 source reference and added work foreign keys). Access and verification statements reflect the underlying compilation, documented by 8 November 2026; the corrected 1944 witness was checked against existing identifying-page images for this revision. Other records have not been systematically rechecked.
 
 ## Corpus and files
 
@@ -29,7 +29,7 @@ Digital-access summaries comprise eight titles labelled `Open PDF; identifying p
 
 `work_id` identifies a separately titled volume (`W-…`); `edition_id` identifies a provisional publication grouping (`E-…`); `contributor_id` identifies a person (`A-…`); and `translation_id` identifies a translation record or lead (`T-…`). Treat identifiers as opaque labels, not independent bibliographical evidence. Their suffixes can reflect provisional interpretations.
 
-`digital_access.work_id` and the semicolon-separated `contributors.work_ids` refer to `works.work_id`. The editions table joins to works by exact `title`; translations join by exact `original_title`. These title joins currently resolve uniquely, but should be reviewed whenever a title changes. Contributor names in other tables are text, not foreign keys. Collections are aggregate summaries without copy identifiers or edition-level links.
+`editions.work_id`, `translations.work_id`, `digital_access.work_id` and the semicolon-separated `contributors.work_ids` refer to `works.work_id`. Use the work IDs to join these tables. The existing `editions.title` and `translations.original_title` columns are retained for readability and checked against the linked work titles. Contributor names in other tables are text, not foreign keys. Collections are aggregate summaries without copy identifiers or edition-level links.
 
 A **work** is distinct from an **edition** (a publication version), an **impression** (a printing), an **issue** (a distribution or imprint variant), a **physical copy** (an individual exemplar), and a **digital object** (a scan or file representing an exemplar). Catalogue edition wording is retained without assuming textual revision. Several catalogue records may describe one publication; several digital objects may reproduce one copy. The summary tables do not provide a complete copy census or a fully normalized model of these relationships.
 
@@ -47,7 +47,7 @@ The compilation combines contemporary Oliver & Boyd advertisements, inspected id
 
 Each work, publication and translation row retains a source URL; collection rows retain an example record. These concise references are not an exhaustive list of witnesses, and a cited scan may support an earlier date through its publication history. Contributor provenance is incomplete: 28 rows lack an individual source URL. For linked authors, work-level references provide additional bibliographical context, but do not independently establish all biographical or editorial claims.
 
-The published CSVs retain the compilation’s bibliographical values and status labels. Collection group labels and the Princeton reader-access note have been generalized for public use. No new bibliographical facts have been supplied to fill blanks.
+The published CSVs retain the compilation’s bibliographical values and status labels, with the 1944 *Statistical mathematics* source URL corrected to its matching witness. Work foreign keys were assigned to publication and translation rows using the existing, unambiguous title matches. Collection group labels and the Princeton reader-access note have been generalized for public use. No missing bibliographical facts have been inferred.
 
 ## Verification and access
 
@@ -60,7 +60,7 @@ An `Open PDF` label records access at the time of compilation, not a rights dete
 - A final publisher list is missing; roster completeness, eight series numbers and some first-publication candidates remain provisional.
 - Publication groupings may need splitting or merging after inspection. Original pagination, brackets, approximate dates and conflicting catalogue wording are retained.
 - McCrea’s 1945 record is a reprint of the 1942 publication. Aitken’s fourth revised *Statistical mathematics* is dated 1945 by a later history; an OCR derivative gives 1946. Phillips’s inspected 1961 witness is an impression of the 1957 eighth edition, despite a ninth-edition catalogue description.
-- The 1944 *Statistical mathematics* record links to a 1949 scan. Its status is retained from the compilation, but the link alone does not identify a matching 1944 copy; the digital-access summary separately identifies the 1944 witness. See [VALIDATION.md](VALIDATION.md).
+- The 1944 *Statistical mathematics* source now links to the matching [1944 digital witness](https://archive.org/details/in.ernet.dli.2015.212078), verified from its title and publication-history pages. The 1942 record still cites a later scan as potential publication-history evidence; it is not a matching-copy reference. See [VALIDATION.md](VALIDATION.md).
 - Whole-book completeness has not been checked leaf by leaf. Known digital duplicates have been consolidated, but other duplicates may remain.
 - Holdings counts describe retrieved records, not complete local collections, current availability or reader eligibility. Translation and contributor coverage is partial. Blank fields mean unresolved or unrecorded information; they must not be converted into inferred values.
 
