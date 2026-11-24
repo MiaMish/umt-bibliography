@@ -1,83 +1,83 @@
-# University Mathematical Texts (1939–1972): A Preliminary Bibliographical Inventory
+# University Mathematical Texts (1939–1972)
 
-A working bibliographical inventory of the University Mathematical Texts (UMT), a series of mathematical textbooks published by Oliver & Boyd, initially edited by A. C. Aitken and D. E. Rutherford. It brings together titles, publication records, contributors, translations, selected library collections and digital-access references to support bibliographical research and the verification of individual records.
+## A Bibliographical Inventory
 
-**This is a working inventory, not an exhaustive or definitive bibliography.** The dates 1939–1972 describe the currently identified first-publication roster. Selected later reissues are also recorded.
+The *University Mathematical Texts* (UMT) series, published by Oliver & Boyd and initially edited by A. C. Aitken and D. E. Rutherford, is a series of short, affordable mathematical textbooks intended primarily for university teaching. Between 1939 and 1972, it expanded to more than forty titles covering subjects including algebra, analysis, geometry, statistics, mathematical physics and numerical methods. Many of the series' volumes appeared in successive editions, circulated internationally and were translated into other languages.
 
-Current release: **24 November 2026** (minor revision: corrected 1944 source reference and added work foreign keys). Access and verification statements reflect the underlying compilation, documented by 8 November 2026; the corrected 1944 witness was checked against existing identifying-page images for this revision. Other records have not been systematically rechecked.
+This repository includes bibliographical information on the series, its contributors, publication histories, translations, library holdings and digital availability. The inventory provides a starting point for tracing the development and circulation of the series and locating sources for comparative research on twentieth-century mathematical textbooks.
 
-## Corpus and files
+The inventory will be updated as further sources are identified and examined.
 
-Counts calculated directly from the six CSVs, excluding headers:
+## The corpus
 
-| File | Rows | Purpose |
-| --- | ---: | --- |
-| [works.csv](works.csv) | 42 | Separately titled volumes, with first-publication candidates, attested series numbers, authors and subjects. |
-| [editions.csv](editions.csv) | 180 | Provisional edition, impression and issue groupings, including selected later reissues (record years 1939–2020). |
-| [contributors.csv](contributors.csv) | 46 | Partial author, editor and translator authorities, with selected biographical references. |
-| [translations.csv](translations.csv) | 14 | Translations and leads, with differing levels of verification. |
-| [collections.csv](collections.csv) | 20 | Selected institutions and counts from retrieved holdings records; not a worldwide census. |
-| [digital_access.csv](digital_access.csv) | 42 | One digital-access summary per titled volume, with external item and PDF links where recorded. |
+The current inventory includes 42 separately titled volumes and 180 publication records, including editions, impressions, issues and selected later reissues.
 
-Of the 42 titled volumes, 22 have first-publication candidates before 1960. Noble’s two separately titled *Numerical methods* parts count separately; grouping these yields 41 parent works. Eight series numbers remain unverified.
+| File                                     | Records | Contents                                                                           |
+|------------------------------------------|--------:|------------------------------------------------------------------------------------|
+| [works.csv](works.csv)                   |      42 | Titles, authors, first-publication dates, series numbers and mathematical subjects |
+| [editions.csv](editions.csv)             |     180 | Publication histories, including editions, impressions and issues                  |
+| [contributors.csv](contributors.csv)     |      46 | Authors, editors, translators and biographical information                         |
+| [translations.csv](translations.csv)     |      14 | Identified translations and bibliographical leads                                  |
+| [collections.csv](collections.csv)       |      20 | Selected library collections and holdings information                              |
+| [digital_access.csv](digital_access.csv) |      42 | Digital availability and links to external resources                               |
 
-The 180 publication records comprise 141 labelled `Catalogue-supported; provisional`, 12 `Identifying pages inspected`, and 27 `Metadata lead only`. They do not establish 180 distinct textual revisions or physically verified editions. The translation table contains nine Spanish, four German and one Italian records or leads.
+The two separately titled parts of Benjamin Noble's *Numerical Methods* are counted individually, yielding 42 volumes corresponding to 41 parent works. Of these volumes, 22 were first published, according to the available evidence, before 1960.
 
-Digital-access summaries comprise eight titles labelled `Open PDF; identifying pages inspected`, one `Open PDF; edition not verified`, 32 `Restricted scans / untested leads`, and one `No digitized copy located`. The recorded `downloaded_objects` counts sum to 17 after known duplicate groups were consolidated. These are digital objects, not 17 editions. No downloaded files are distributed here.
+The publication records distinguish between different editions, impressions and issues where the available evidence permits. The number of records does not correspond to the number of distinct textual revisions.
 
-## Identifiers and bibliographical units
+## Library holdings and digital access
 
-`work_id` identifies a separately titled volume (`W-…`); `edition_id` identifies a provisional publication grouping (`E-…`); `contributor_id` identifies a person (`A-…`); and `translation_id` identifies a translation record or lead (`T-…`). Treat identifiers as opaque labels, not independent bibliographical evidence. Their suffixes can reflect provisional interpretations.
+The inventory identifies substantial collections of UMT volumes, including holdings records for 39 titles at Princeton University Library and 37 at the Institut Henri Poincaré in Paris.
 
-`editions.work_id`, `translations.work_id`, `digital_access.work_id` and the semicolon-separated `contributors.work_ids` refer to `works.work_id`. Use the work IDs to join these tables. The existing `editions.title` and `translations.original_title` columns are retained for readability and checked against the linked work titles. Contributor names in other tables are text, not foreign keys. Collections are aggregate summaries without copy identifiers or edition-level links.
+Digital-access information includes openly accessible facsimiles, restricted digitizations and further acquisition leads. The preliminary survey has identified and retrieved 17 distinct digital objects, with 12 editions identified through inspection of their title or publication-history pages.
 
-A **work** is distinct from an **edition** (a publication version), an **impression** (a printing), an **issue** (a distribution or imprint variant), a **physical copy** (an individual exemplar), and a **digital object** (a scan or file representing an exemplar). Catalogue edition wording is retained without assuming textual revision. Several catalogue records may describe one publication; several digital objects may reproduce one copy. The summary tables do not provide a complete copy census or a fully normalized model of these relationships.
+Links to available resources are included in the relevant CSV files. No facsimiles are distributed through this repository.
 
-See [DATA_DICTIONARY.md](DATA_DICTIONARY.md) for every column and the status vocabulary.
+## Sources
 
-## Sources and provenance
+The inventory was assembled using contemporary publisher advertisements, institutional library catalogues, digital libraries and the identifying pages of digitized books.
 
-The compilation combines contemporary Oliver & Boyd advertisements, inspected identifying pages of digitized books, institutional catalogues and digital-library metadata. Principal discovery and verification sources include:
+Principal sources include:
 
-- [Princeton University Library catalogue](https://catalog.princeton.edu/), including separately identified ReCAP partner records. A partner record does not establish a Princeton-owned copy.
-- [CiNii Books, provided by the National Institute of Informatics (NII)](https://ci.nii.ac.jp/books/), including the [UMT series record](https://ci.nii.ac.jp/ncid/BA03774621?l=en), and [Sudoc, Agence bibliographique de l’Enseignement supérieur (Abes)](https://www.sudoc.fr/), for bibliography and holdings.
-- [Open Library](https://openlibrary.org/), [Internet Archive](https://archive.org/) (including Digital Library of India scans), and [HathiTrust](https://www.hathitrust.org/), for publication and digital-copy discovery. Discovery metadata and search-only records do not establish full-text access.
-- [Oliver & Boyd advertisement, May 1961, printed p. 58](https://www.oemg.ac.at/IMN/imn067.pdf), for series and editorial evidence. This is a selection, not a terminal publisher list.
-- Contemporary notices and historical bibliographical evidence linked from translation rows; selected biographical authorities linked from contributor rows.
+- [CiNii Books](https://ci.nii.ac.jp/books/), including its [University Mathematical Texts series record](https://ci.nii.ac.jp/ncid/BA03774621?l=en)
+- [Sudoc](https://www.sudoc.fr/)
+- [Princeton University Library](https://catalog.princeton.edu/)
+- [Internet Archive](https://archive.org/), including the Digital Library of India collections
+- [Open Library](https://openlibrary.org/)
+- [HathiTrust](https://www.hathitrust.org/)
+- Contemporary Oliver & Boyd advertisements and other bibliographical sources
 
-Each work, publication and translation row retains a source URL; collection rows retain an example record. These concise references are not an exhaustive list of witnesses, and a cited scan may support an earlier date through its publication history. Contributor provenance is incomplete: 28 rows lack an individual source URL. For linked authors, work-level references provide additional bibliographical context, but do not independently establish all biographical or editorial claims.
+References to individual sources are included in the dataset, alongside information about the verification status of the records.
 
-The published CSVs retain the compilation’s bibliographical values and status labels, with the 1944 *Statistical mathematics* source URL corrected to its matching witness. Work foreign keys were assigned to publication and translation rows using the existing, unambiguous title matches. Collection group labels and the Princeton reader-access note have been generalized for public use. No missing bibliographical facts have been inferred.
+## Data structure and documentation
 
-## Verification and access
+Each titled volume is assigned a unique `work_id`, which connects the bibliographical, publication, translation, contributor and digital-access records.
 
-`Catalogue-supported; provisional` means a grouping is supported by a catalogue or comparable publication-history reference, without establishing inspection of a matching copy. `Identifying pages inspected` records a check of title or publication-history pages in a digital witness; it does not mean physical inspection, complete textual collation or verification of every leaf. `Metadata lead only` requires further verification. Translation statuses distinguish catalogue support, a contemporary announcement, an attested but undated issue, and a lead awaiting item verification.
+- [Data dictionary](DATA_DICTIONARY.md) — column definitions, identifiers, relationships between tables and verification categories.
+- [Data Quality and Provenance](DATA_QUALITY.md) — data quality checks, bibliographical uncertainties and known limitations.
 
-An `Open PDF` label records access at the time of compilation, not a rights determination or a promise of continuing availability. Restricted scans and untested leads remain distinct from verified open downloads. `No digitized copy located` reports a search outcome, not proof that none exists. **Publicly accessible digitization does not establish public-domain status or permission to redistribute.**
+The inventory distinguishes catalogue-supported information from records verified through the inspection of identifying pages. Publication histories, contributor information, translations and holdings remain subject to further research and verification.
 
-## Known limitations
+Library holdings and digital-access information reflect the results of the preliminary survey and do not necessarily indicate current availability.
 
-- A final publisher list is missing; roster completeness, eight series numbers and some first-publication candidates remain provisional.
-- Publication groupings may need splitting or merging after inspection. Original pagination, brackets, approximate dates and conflicting catalogue wording are retained.
-- McCrea’s 1945 record is a reprint of the 1942 publication. Aitken’s fourth revised *Statistical mathematics* is dated 1945 by a later history; an OCR derivative gives 1946. Phillips’s inspected 1961 witness is an impression of the 1957 eighth edition, despite a ninth-edition catalogue description.
-- The 1944 *Statistical mathematics* source now links to the matching [1944 digital witness](https://archive.org/details/in.ernet.dli.2015.212078), verified from its title and publication-history pages. The 1942 record still cites a later scan as potential publication-history evidence; it is not a matching-copy reference. See [VALIDATION.md](VALIDATION.md).
-- Whole-book completeness has not been checked leaf by leaf. Known digital duplicates have been consolidated, but other duplicates may remain.
-- Holdings counts describe retrieved records, not complete local collections, current availability or reader eligibility. Translation and contributor coverage is partial. Blank fields mean unresolved or unrecorded information; they must not be converted into inferred values.
+## Citation
 
-## Suggested citation
+Joskowicz, Mia. 2026. *University Mathematical Texts (1939–1972): A Bibliographical Inventory*. GitHub. https://github.com/MiaMish/umt-bibliography.
 
-Joskowicz, Mia. 2026. *University Mathematical Texts (1939–1972): A Preliminary Bibliographical Inventory*. Snapshot of 24 November 2026. https://github.com/MiaMish/umt-bibliography. Cite the commit hash used when reproducibility matters.
+For reproducibility, cite the relevant commit or release.
 
-Machine-readable citation metadata is provided in [CITATION.cff](CITATION.cff). Corrections with supporting references are welcome through repository issues.
+Machine-readable citation metadata is available in [CITATION.cff](CITATION.cff).
+
+## Contributing
+
+Corrections, additional records and references are welcome through GitHub issues, preferably accompanied by supporting bibliographical evidence.
 
 ## Licence
 
 © 2026 Mia Joskowicz.
 
-The original bibliographical compilation and accompanying documentation are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) licence, to the extent that the author holds the relevant rights.
+The original bibliographical compilation and accompanying documentation are licensed under the [Creative Commons Attribution 4.0 International licence (CC BY 4.0)](LICENSE), to the extent that the author holds the relevant rights.
 
-Third-party materials and externally sourced metadata remain subject to their respective rights and terms of use.
+Third-party materials and externally sourced metadata remain subject to their respective rights and terms of use. The licence does not extend to linked books or facsimiles.
 
-Users are kindly requested to cite this repository when using the dataset in academic research.
-
-The official [CC BY 4.0 legal text](LICENSE) is included. This licence does not place new restrictions on facts or material already in the public domain, and does not license the linked books, facsimiles, websites or third-party catalogue records. Source attribution and rights notes are recorded in [VALIDATION.md](VALIDATION.md).
+*Last updated: 24 November 2026.*

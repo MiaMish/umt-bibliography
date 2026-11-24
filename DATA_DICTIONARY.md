@@ -1,115 +1,160 @@
 # Data dictionary
 
-All tables are UTF-8, comma-separated CSVs with a header row. Quoted fields may contain commas. Values are text unless described as counts or years below. Blank cells mean unresolved or unrecorded information, not zero, absence or a negative finding. Brackets, question marks and catalogue wording are intentional. Semicolons separate lists in selected fields; they are not CSV delimiters.
+All tables are UTF-8 encoded, comma-separated CSV files with a header row. Values are text unless otherwise specified. Semicolons separate lists in selected fields.
+
+Blank fields indicate information that has not been recorded, has not yet been established or is not applicable. Brackets, question marks and qualified catalogue wording reflect bibliographical uncertainties.
 
 ## works.csv
 
-One row per separately titled volume. Noble’s two parts have separate work IDs.
+One record per separately titled volume. The two parts of Benjamin Noble's *Numerical Methods* are assigned separate work identifiers.
 
-| Column | Meaning |
-| --- | --- |
-| `work_id` | Unique local work identifier. |
-| `year` | Four-digit candidate first-publication year; does not imply inspection of the first issue. |
-| `series_no` | Series number only where explicitly attested; blank when unverified. |
-| `title` | Inventory title; unique in this snapshot. Retained title fields in publication and translation records are checked against this value; joins use `work_id`. |
-| `author` | Author names; multiple names separated by semicolons. |
-| `subject` | Concise descriptive subject terms separated by semicolons. |
-| `source` | Selected bibliographical reference URL. |
-| `note` | Qualifications concerning numbering, multipart works or translated origins. |
+| Column      | Description                                                |
+|-------------|------------------------------------------------------------|
+| `work_id`   | Unique work identifier.                                    |
+| `year`      | Identified or provisional first-publication year.          |
+| `series_no` | Series number, where explicitly attested.                  |
+| `title`     | Title of the work as recorded in the inventory.            |
+| `author`    | Author names, separated by semicolons where applicable.    |
+| `subject`   | Descriptive subject terms, separated by semicolons.        |
+| `source`    | Bibliographical reference URL.                             |
+| `note`      | Additional bibliographical information and qualifications. |
 
 ## editions.csv
 
-One row per provisional edition, impression or issue grouping. These rows are not a census of physical copies, and edition designations do not prove textual differences.
+One record per identified or provisional edition, impression or issue grouping. Publication records do not necessarily correspond to distinct textual revisions.
 
-| Column | Meaning |
-| --- | --- |
-| `edition_id` | Unique local publication-record identifier. Suffixes such as `US`, `imp…`, `unspecified` or `reissue` preserve provisional distinctions. |
-| `work_id` | Required foreign key to `works.work_id`; identifies the work associated with this publication grouping. Repeats across publication records for the same work. |
-| `title` | Retained inventory title; matches `works.title` for the linked `work_id`. |
-| `year` | Four-digit year assigned to the publication grouping; can differ from the impression year. Includes later reissues. |
-| `impression` | Four-digit printing year where separately recorded; 14 populated cells. A blank does not establish that a record is a new edition. |
-| `designation` | Selected edition or printing wording, including brackets and qualifications; blank if unstated or unresolved. |
-| `pages` | Pagination or extent as recorded, with catalogue punctuation and occasional qualifications; not a normalized leaf count. |
-| `status` | Verification label defined below. |
-| `source` | Selected catalogue, metadata or digital-witness URL. A later witness can support a publication-history statement about an earlier issue. |
-| `note` | Issue, reissue, dating or other qualifications. |
+| Column        | Description                                                                |
+|---------------|----------------------------------------------------------------------------|
+| `edition_id`  | Unique publication-record identifier.                                      |
+| `work_id`     | Reference to `works.work_id`.                                              |
+| `title`       | Title of the associated work.                                              |
+| `year`        | Publication year assigned to the record, including later reissues.         |
+| `impression`  | Printing year, where separately recorded.                                  |
+| `designation` | Edition or printing designation, retaining bibliographical qualifications. |
+| `pages`       | Recorded pagination or extent.                                             |
+| `status`      | Bibliographical verification status.                                       |
+| `source`      | Catalogue, bibliographical or digital-witness reference URL.               |
+| `note`        | Additional information concerning dating, editions, impressions or issues. |
+
+A source may refer to a later edition whose publication history provides evidence of an earlier publication rather than to a copy of the publication itself.
 
 ## contributors.csv
 
-Partial person authorities, not a definitive biographical register.
+Records of authors, editors, translators and other contributors associated with the series.
 
-| Column | Meaning |
-| --- | --- |
-| `contributor_id` | Unique local person identifier. |
-| `name` | Recorded personal name; some names remain abbreviated. |
-| `dates` | Recorded life dates, when available; not editorial tenure dates. |
-| `roles` | Semicolon-separated role descriptions and unresolved qualifications. `dates unresolved` in an editorial-role entry may concern tenure even if life dates are present. |
-| `umt_titles` | Integer count of linked titled volumes; zero for ancillary contributors without assigned work links, not proof of no contribution. |
-| `work_ids` | Semicolon-separated references to `works.work_id`; blank where unassigned. |
-| `source` | Selected person-level reference URL, where recorded. Missing URLs are a provenance limitation. |
+| Column           | Description                                                                     |
+|------------------|---------------------------------------------------------------------------------|
+| `contributor_id` | Unique contributor identifier.                                                  |
+| `name`           | Recorded personal name.                                                         |
+| `dates`          | Life dates, where available.                                                    |
+| `roles`          | Roles and responsibilities associated with the series, separated by semicolons. |
+| `umt_titles`     | Number of titled volumes linked to the contributor in the inventory.            |
+| `work_ids`       | References to `works.work_id`, separated by semicolons.                         |
+| `source`         | Biographical or bibliographical reference URL.                                  |
+
+Contributor roles and work associations reflect the available evidence rather than a complete record of participation in the series. A zero in `umt_titles` indicates that no individual work has been linked to the contributor.
 
 ## translations.csv
 
-One row per translation record or lead, including distinct issues and undated attestations. No complete translated facsimile has been established in this compilation.
+Records of identified translations and bibliographical leads, including distinct issues and undated attestations.
 
-| Column | Meaning |
-| --- | --- |
-| `translation_id` | Unique local record identifier; source-based suffixes are not a verification guarantee. |
-| `work_id` | Required foreign key to `works.work_id`; identifies the original work associated with this translation record or lead. Repeats across translations of the same work. |
-| `original_title` | Retained original inventory title; matches `works.title` for the linked `work_id`. |
-| `translated_title` | Recorded translated title, retaining source spelling. |
-| `language` | Language of the translation or lead. |
-| `date` | Free-text date or uncertainty, including brackets, `c`, `s. f.` (undated) and announcement bounds. Do not parse all values as publication years. |
-| `translator` | Recorded translator or responsibility statement; may include catalogue transcription such as `al cuidado de`. |
-| `publisher` | Recorded publisher, where available. |
-| `status` | Verification label defined below. |
-| `source` | Selected catalogue, contemporary notice or bibliographical evidence URL; a lead may point to an authority record rather than an item. |
+| Column             | Description                                                              |
+|--------------------|--------------------------------------------------------------------------|
+| `translation_id`   | Unique translation-record identifier.                                    |
+| `work_id`          | Reference to the original work in `works.work_id`.                       |
+| `original_title`   | Title of the original work.                                              |
+| `translated_title` | Recorded title of the translation.                                       |
+| `language`         | Language of the translation.                                             |
+| `date`             | Publication date or approximate dating, retaining source qualifications. |
+| `translator`       | Translator or recorded statement of responsibility.                      |
+| `publisher`        | Publisher of the translation.                                            |
+| `status`           | Bibliographical verification status.                                     |
+| `source`           | Catalogue, contemporary notice or other bibliographical reference URL.   |
+
+The `date` field may contain approximate dates, date ranges or undated designations and should not be treated as a uniformly numerical field.
 
 ## collections.csv
 
-Selected institutional summaries. Institution names are unique in this snapshot, but no stable collection IDs are assigned.
+Selected institutional collections holding volumes of the series.
 
-| Column | Meaning |
-| --- | --- |
-| `group` | Broad geographical grouping for presentation. |
-| `institution` | Institution or named subcollection. |
-| `country` | Country label. |
-| `titles` | Integer count of inventory titles found in retrieved holdings records. Counts overlap across institutions and must not be summed as unique titles. |
-| `edition_records` | Integer count of publication/holding groupings retrieved for that institution, not proven distinct editions or physical-copy counts. |
-| `access_note` | Recorded consultation or loan qualification; current conditions require confirmation. |
-| `example_record` | One illustrative source URL, not a complete evidential list for the aggregate count. |
+| Column            | Description                                                                |
+|-------------------|----------------------------------------------------------------------------|
+| `group`           | Geographical grouping.                                                     |
+| `institution`     | Institution or named collection.                                           |
+| `country`         | Country in which the collection is located.                                |
+| `titles`          | Number of inventory titles identified in the retrieved holdings records.   |
+| `edition_records` | Number of publication or holdings groupings retrieved for the institution. |
+| `access_note`     | Information concerning consultation or loan conditions.                    |
+| `example_record`  | Illustrative catalogue-record URL.                                         |
+
+Holdings counts reflect the available catalogue evidence rather than comprehensive collection surveys. Counts overlap between institutions and do not represent distinct titles or physical copies across collections.
 
 ## digital_access.csv
 
-One summary per `work_id`; the table does not enumerate every digital object.
+One summary of digital availability per titled volume.
 
-| Column | Meaning |
-| --- | --- |
-| `work_id` | Unique reference to `works.work_id`. |
-| `title` | Matching inventory title. |
-| `access` | Access/verification label defined below. |
-| `downloaded_objects` | Nonnegative integer count of digital objects retained after known duplicate groups were consolidated. This is a recorded acquisition count, not a count of editions or a current access guarantee. |
-| `inspected_editions` | Free-text list of dates and identifying-page wording for inspected witnesses, separated by semicolons. Some entries contain semicolons within their descriptions; this field is not a normalized relation. |
-| `best_item` | Selected external item/landing-page URL; restricted and untested leads may be included. |
-| `pdf` | Selected external PDF URL when recorded; no file is bundled and no redistribution right is implied. |
-| `note` | Completeness or access qualification. |
+| Column               | Description                                                                                   |
+|----------------------|-----------------------------------------------------------------------------------------------|
+| `work_id`            | Unique reference to `works.work_id`.                                                          |
+| `title`              | Title of the associated work.                                                                 |
+| `access`             | Digital-access and verification status.                                                       |
+| `downloaded_objects` | Number of distinct digital objects retrieved, after consolidation of known duplicates.        |
+| `inspected_editions` | Textual description of publications identified through inspection of their identifying pages. |
+| `best_item`          | Selected external digital-library or item-record URL.                                         |
+| `pdf`                | External PDF URL, where recorded.                                                             |
+| `note`               | Additional information concerning access, identification or completeness.                     |
 
-## Status vocabulary
+The `downloaded_objects` field counts digital objects rather than distinct editions. The `inspected_editions` field contains descriptive text rather than normalized edition references.
 
-These labels report the compilation’s recorded evidence, not a fresh audit of the books for this repository release.
+Digital-access information reflects the time of the survey and does not establish current availability or redistribution rights.
 
-| Table/field | Exact label | Meaning |
-| --- | --- | --- |
-| editions/status | `Catalogue-supported; provisional` | Catalogue or comparable publication-history support; matching-copy inspection not established by the label. |
-| editions/status | `Identifying pages inspected` | Title/history pages of a digital witness checked; no physical inspection, mathematical collation or full leaf check implied. |
-| editions/status | `Metadata lead only` | Discovery metadata requiring further verification. |
-| translations/status | `Catalogue-supported; copy unchecked` | Catalogue support; translated copy not inspected. |
-| translations/status | `Translation attested; issue undated` | Bibliographical attestation without an established issue date. |
-| translations/status | `Contemporary notice; copy unchecked` | Contemporary announcement; copy and precise publication details unchecked. |
-| translations/status | `Lead; item verification needed` | Tentative lead requiring item-level verification. |
-| digital_access/access | `Open PDF; identifying pages inspected` | Public PDF access recorded and identifying pages checked; whole-book completeness uncollated. |
-| digital_access/access | `Open PDF; edition not verified` | Public PDF access recorded, but publication identity unverified. |
-| digital_access/access | `Restricted scans / untested leads` | Restricted material or discovery leads; full page-image access not established. |
-| digital_access/access | `No digitized copy located` | No digital copy found in the searches represented; not evidence of absence. |
+## Relationships between tables
 
-`Local access conditions unverified.` and other collection access notes concern physical consultation, not digital access or copyright. Works, contributors and collections have no uniform row-level verification field; no status should be inferred from its absence.
+The `work_id` field connects the principal bibliographical tables:
+
+| Table                | Relationship to `works.csv`                                            |
+|----------------------|------------------------------------------------------------------------|
+| `editions.csv`       | Multiple publication records may reference the same work.              |
+| `translations.csv`   | Multiple translation records may reference the same work.              |
+| `contributors.csv`   | Contributors may be associated with multiple works through `work_ids`. |
+| `digital_access.csv` | One digital-access summary per work.                                   |
+
+Use work identifiers rather than titles when joining tables. Identifiers are local to this inventory and should not be interpreted as independent bibliographical evidence.
+
+The collections table contains aggregate institutional information rather than individual work or copy associations.
+
+## Verification and access categories
+
+The following tables reproduce the status labels used in the CSV files.
+
+### Publication records
+
+| Status                             | Description                                                                                                      |
+|------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| `Catalogue-supported; provisional` | Supported by catalogue records or publication-history evidence, without confirmed inspection of a matching copy. |
+| `Identifying pages inspected`      | Title or publication-history pages of a digital witness have been examined.                                      |
+| `Metadata lead only`               | Bibliographical lead requiring further verification.                                                             |
+
+### Translation records
+
+| Status                                | Description                                                                                          |
+|---------------------------------------|------------------------------------------------------------------------------------------------------|
+| `Catalogue-supported; copy unchecked` | Supported by catalogue evidence, without inspection of the translated copy.                          |
+| `Translation attested; issue undated` | Translation attested by bibliographical evidence, with no established issue date.                    |
+| `Contemporary notice; copy unchecked` | Supported by a contemporary notice, without verification of the copy or precise publication details. |
+| `Lead; item verification needed`      | Tentative record requiring further bibliographical verification.                                     |
+
+### Digital access
+
+| Status                                  | Description                                                                                  |
+|-----------------------------------------|----------------------------------------------------------------------------------------------|
+| `Open PDF; identifying pages inspected` | Public PDF access recorded and identifying pages examined.                                   |
+| `Open PDF; edition not verified`        | Public PDF access recorded, but publication identity has not been established.               |
+| `Restricted scans / untested leads`     | Restricted digitizations or leads for which full page-image access has not been established. |
+| `No digitized copy located`             | No digitized copy identified during the survey.                                              |
+
+Inspection of identifying pages does not imply inspection of the entire volume or collation against other editions.
+
+The works, contributors and collections tables do not have uniform record-level verification categories.
+
+For further information on bibliographical verification, source provenance and limitations, see [DATA_QUALITY.md](DATA_QUALITY.md).
