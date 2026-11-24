@@ -1,0 +1,37 @@
+# Local system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*~
+*.swp
+*.tmp
+__pycache__/
+*.py[cod]
+.venv/
+# Credentials and local configuration
+.env
+.env.*
+*.pem
+*.key
+# Research working materials and downloaded content
+agents/
+.agents/
+.codex/
+logs/
+prompts/
+downloads/
+facsimiles/
+ocr/
+*.log
+*.jsonl
+*.pdf
+*.epub
+*.djvu
+*.tif
+*.tiff
+INSIGHTS.md
+COMPARATIVE_SERIES.md
+SECONDARY_LITERATURE.md
+CONTEMPORARY_REVIEWS.md
+SOURCES.md

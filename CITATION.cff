@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite this preliminary inventory when using it in academic research. Cite the commit used for reproducibility."
+type: dataset
+title: "University Mathematical Texts (1939–1972): A Preliminary Bibliographical Inventory"
+authors:
+  - family-names: Joskowicz
+    given-names: Mia
+date-released: '2026-11-24'
+url: "https://github.com/MiaMish/umt-bibliography"
+repository-code: "https://github.com/MiaMish/umt-bibliography"
+license: CC-BY-4.0
+license-url: "https://github.com/MiaMish/umt-bibliography/blob/main/README.md#licence"
+abstract: "A working bibliographical inventory of the University Mathematical Texts series, including provisional publication records, contributors, translations, selected collections and digital-access summaries. CC BY 4.0 applies only to the original compilation and documentation to the extent of the author's rights; third-party metadata retains its own terms."
+keywords:
+  - University Mathematical Texts
+  - bibliography
+  - history of mathematics

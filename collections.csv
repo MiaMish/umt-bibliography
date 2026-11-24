@@ -1,0 +1,21 @@
+group,institution,country,titles,edition_records,access_note,example_record
+United States,Princeton University Library,United States,39,76,External-reader access conditions require confirmation with the library.,https://catalog.princeton.edu/catalog/999596853506421
+United States,New York Public Library,United States,34,49,Local access conditions unverified.,https://catalog.princeton.edu/catalog/SCSB-8605688
+United States,Columbia University Libraries,United States,22,33,Local access conditions unverified.,https://catalog.princeton.edu/catalog/SCSB-3635413
+United States,Harvard Library,United States,8,9,Local access conditions unverified.,https://catalog.princeton.edu/catalog/SCSB-10288630
+United States,University of Central Arkansas Archives,United States,8,8,Local access conditions unverified.,https://uca.edu/archives/m12-03-dr-cecil-mcdermott-mathematics-education-reference-collection/
+France,Bibliothèque de l’Institut Henri Poincaré,France,37,40,Local access conditions unverified.,https://www.sudoc.fr/015222438
+France,Sorbonne Université — MIR,France,29,40,Local access conditions unverified.,https://www.sudoc.fr/015222438
+France,"Bibliothèque Jacques Hadamard, Orsay",France,25,25,Local access conditions unverified.,https://www.sudoc.fr/015222438
+France,Université de Rennes — Beaulieu,France,23,23,Local access conditions unverified.,https://www.sudoc.fr/015472981
+France,École polytechnique,France,21,23,Local access conditions unverified.,https://www.sudoc.fr/015222438
+Western and Northern Europe,Karlsruhe Institute of Technology Library,Germany,3,5,Open-stack records; loan restrictions vary by copy.,https://katalog.bibliothek.kit.edu/bib/809145
+Western and Northern Europe,National Library of Ireland,Ireland,2,2,Selected copies offsite; order at least one week ahead.,https://catalogue.nli.ie/Record/vtls000461785
+Elsewhere,Hitotsubashi University Library,Japan,39,48,Local access conditions unverified.,https://ci.nii.ac.jp/ncid/BA13127008
+Elsewhere,Okayama University Library,Japan,39,51,Local access conditions unverified.,https://ci.nii.ac.jp/ncid/BA13127008
+Elsewhere,Kyoto University — Yoshida-South General Library,Japan,27,30,Local access conditions unverified.,https://ci.nii.ac.jp/ncid/BA13127008
+Elsewhere,Nagoya University Library,Japan,26,34,Local access conditions unverified.,https://ci.nii.ac.jp/ncid/BA13127008
+Elsewhere,"Science and Technology Library, Kyushu University",Japan,26,38,Local access conditions unverified.,https://ci.nii.ac.jp/ncid/BA13127008
+Elsewhere,"John Whelan Library, Isaac Newton Group of Telescopes",Spain,1,1,Local access conditions unverified.,https://astro.ing.iac.es/library/showentry.php?entryflag=book&refnr=6795
+Elsewhere,KAIST Library,South Korea,1,1,Selected copy non-circulating.,https://library.kaist.ac.kr/search/ctlgSearch/posesn/view.do?bibctrlno=236660&se=b0&ty=B
+Elsewhere,Russian State Library,Russia,1,1,Local access conditions unverified.,https://search.rsl.ru/ru/record/01000353586

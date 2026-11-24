@@ -1,0 +1,43 @@
+work_id,year,series_no,title,author,subject,source,note
+W-AIT-DM,1939,1,Determinants and matrices,Alexander Craig Aitken,Linear algebra; determinants; matrices,https://catalog.princeton.edu/catalog/9916482523506421,
+W-GIL-I,1939,3,Integration,Robert Pollock Gillespie,Integral calculus,https://catalog.princeton.edu/catalog/9919240483506421,
+W-INC-IODE,1939,4,Integration of ordinary differential equations,Edward Lindsay Ince,Ordinary differential equations,https://catalog.princeton.edu/catalog/9916069553506421,
+W-AIT-SM,1939,,Statistical mathematics,Alexander Craig Aitken,Probability; mathematical statistics,https://catalog.princeton.edu/catalog/9917296443506421,Series number unverified.
+W-TUR-TE,1939,6,Theory of equations,Herbert Westren Turnbull,Algebra; polynomial equations,https://catalog.princeton.edu/catalog/9915846753506421,
+W-RUT-VM,1939,5,"Vector methods: applied to differential geometry, mechanics, and potential theory",Daniel Edwin Rutherford,Vector calculus; differential geometry; mechanics; potential theory,https://catalog.princeton.edu/catalog/9916408933506421,
+W-PHI-CV,1940,7,Functions of a complex variable: with applications,Edgar Giraldus Phillips,Complex analysis,https://catalog.princeton.edu/catalog/9916738923506421,
+W-COU-W,1941,8,Waves: a mathematical account of the common types of wave motion,Charles Alfred Coulson,Wave motion; mathematical physics,https://catalog.princeton.edu/catalog/9916721263506421,
+W-MCC-AG,1942,10,Analytical geometry of three dimensions,William Hunter McCrea,Solid analytic geometry,https://openlibrary.org/books/OL18573116M,
+W-HYS-IS,1942,9,Infinite series,James Morton Hyslop,Infinite series; convergence,https://catalog.princeton.edu/catalog/SCSB-8605363,
+W-COU-E,1948,11,Electricity,Charles Alfred Coulson,Electrostatics; electromagnetism,https://catalog.princeton.edu/catalog/9920085653506421,
+W-LED-FG,1949,13,Introduction to the theory of finite groups,Walter Ledermann,Finite groups,https://catalog.princeton.edu/catalog/9919952033506421,
+W-FAU-PG,1949,12,Projective geometry,Thomas Ewan Faulkner,Projective geometry,https://catalog.princeton.edu/catalog/9920436323506421,
+W-RUT-CM,1951,14,Classical mechanics,Daniel Edwin Rutherford,Classical mechanics,https://catalog.princeton.edu/catalog/9919878113506421,
+W-GIL-PD,1951,,Partial differentiation,Robert Pollock Gillespie,Multivariable calculus,https://catalog.princeton.edu/catalog/9919178783506421,Series number unverified.
+W-ROG-VI,1952,16,Volume and integral,Werner Wolfgang Rogosinski,Measure; integration,https://catalog.princeton.edu/catalog/9917051603506421,
+W-SPA-TC,1953,,Tensor calculus,Barry Spain,Tensor calculus,https://catalog.princeton.edu/catalog/9919316183506421,Series number unverified.
+W-MAC-GEV,1956,18,German-English mathematical vocabulary,Sheila Scott Macintyre; Edith Witte,Mathematical language; German-English vocabulary,https://catalog.princeton.edu/catalog/9941105223506421,
+W-SNE-SF,1956,19,Special functions of mathematical physics and chemistry,Ian Naismith Sneddon,Special functions; mathematical physics,https://catalog.princeton.edu/catalog/SCSB-8606047,
+W-BUR-ODE,1956,21,The theory of ordinary differential equations,John Charles Burkill,Ordinary differential equations,https://catalog.princeton.edu/catalog/9919252273506421,
+W-PAT-T,1956,20,Topology,Edward M'William Patterson,Topology,https://catalog.princeton.edu/catalog/9919240643506421,
+W-RUT-FD,1959,22,Fluid dynamics,Daniel Edwin Rutherford,Fluid mechanics,https://catalog.princeton.edu/catalog/9919842493506421,
+W-HYS-RV,1960,24,Real variable,James Morton Hyslop,Real analysis,https://catalog.princeton.edu/catalog/9919261403506421,
+W-RIN-SR,1960,23,Special relativity,Wolfgang Rindler,Special relativity,https://catalog.princeton.edu/catalog/9919935823506421,
+W-NID-RR,1962,,Russian reader in pure and applied mathematics,Peter Harold Nidditch,Mathematical language; Russian reading,https://catalog.princeton.edu/catalog/9915958803506421,Series number unverified.
+W-BUL-REV,1963,26,Russian-English mathematical vocabulary,J. Burlak,Mathematical language; Russian-English vocabulary,https://catalog.princeton.edu/catalog/9919248773506421,
+W-ADA-FT,1964,,Introduction to field theory,Iain Thomas Arthur Carpenter Adamson,Algebra; field theory,https://catalog.princeton.edu/catalog/999596853506421,Series number unverified.
+W-HUN-NT,1964,28,Number theory,John Hunter,Number theory,https://catalog.princeton.edu/catalog/9920141693506421,
+W-NOB-N1,1964,29,"Numerical methods. 1: Iteration, programming and algebraic equations",Benjamin Noble,Numerical analysis; algebraic equations; programming,https://ci.nii.ac.jp/ncid/BA31291331,Separately titled part of a two-part work.
+W-NOB-N2,1964,30,"Numerical methods. 2: Differences, integration and differential equations",Benjamin Noble,Numerical analysis; finite differences; numerical integration,https://ci.nii.ac.jp/ncid/BA31291331,Separately titled part of a two-part work.
+W-PAT-RUT-EAA,1965,31,Elementary abstract algebra,Edward M'William Patterson; Daniel Edwin Rutherford,Abstract algebra,https://catalog.princeton.edu/catalog/9915034173506421,
+W-JEF-MHD,1966,33,Magnetohydrodynamics,Alan Jeffrey,Magnetohydrodynamics,https://catalog.princeton.edu/catalog/996637943506421,
+W-SHE-VS,1966,32,Vector spaces of finite dimension,Geoffrey Colin Shephard,Linear algebra; vector spaces,https://catalog.princeton.edu/catalog/9915930043506421,
+W-MON-MM,1967,34,An introduction to modern mathematics,Albert Monjallon,Foundations; modern mathematics,https://catalog.princeton.edu/catalog/SCSB-8601586,English translation of an earlier foreign-language work.
+W-GRA-P,1967,36,Probability,James Robertson Gray,Probability,https://catalog.princeton.edu/catalog/9916262793506421,
+W-NEW-QM,1967,35,Quantum mechanics,Robert Albert Newing; John Cunningham,Quantum mechanics,https://catalog.princeton.edu/catalog/9919814963506421,
+W-CLE-CV,1968,38,Calculus of variations,John C. Clegg,Calculus of variations,https://catalog.princeton.edu/catalog/9919160233506421,
+W-MES-SE,1968,37,Series expansions for mathematical physicists,Herbert Meschkowski,Series expansions; mathematical physics,https://catalog.princeton.edu/catalog/9915041263506421,English translation of an earlier foreign-language work.
+W-PLA-TS,1971,40,An introduction to the theory of statistics,Robert Lewis Plackett,Mathematical statistics,https://catalog.princeton.edu/catalog/9915897693506421,
+W-FUL-MA,1971,,Mathematical analysis,Gordon H. Fullerton,Mathematical analysis,https://catalog.princeton.edu/catalog/9915914883506421,Series number unverified.
+W-ADA-RM,1972,,Elementary rings and modules,Iain Thomas Arthur Carpenter Adamson,Algebra; rings; modules,https://catalog.princeton.edu/catalog/9915878843506421,Series number unverified.
+W-PIT-MS,1972,,Introduction to metric spaces,Charles George Clarke Pitts,Metric spaces,https://catalog.princeton.edu/catalog/9915947293506421,Series number unverified.
